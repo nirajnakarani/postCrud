@@ -1,0 +1,25 @@
+<form action="/post/addData" method="post" enctype="multipart/form-data">
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>
+                Enter Title : <input type="text"name="title" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Enter Subject : <textarea name="sub"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Select Image : <input type="file" name="postImg">
+            </td>
+        </tr>
+       
+        <tr>
+            <td style="display: flex; justify-content: space-between;"> <input type="submit" value="submit">
+                <a href="/post/viewPost">View Post</a>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/" style="margin-bottom: 20px; display: inline-block;">Add Data</a>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Gender</td>
+            <td>Hobby</td>
+            <td>City</td>
+            <td>Msg</td>
+            <td>Img</td>
+            <td>Action</td>
+        </tr>
+        <%for(var obj of stdetails){%>
+            <tr>
+                <td>
+                    <%=obj.name%>
+                </td>
+                <td>
+                    <%=obj.age%>
+                </td>
+                <td>
+                    <%=obj.gender%>
+                </td>
+                <td>
+                    <%=obj.hobby%>
+                </td>
+                <td>
+                    <%=obj.city%>
+                </td>
+                <td>
+                    <%=obj.msg%>
+                </td>
+                <td>
+                    <img src="<%=obj.adminImg%>" height="100">
+                </td>
+                <td>
+                    <a href="/deleteSt/?id=<%=obj.id%>">Delete</a> || <a href="updateSt/?id=<%=obj.id%>">Update</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+</body>
+
+</html>

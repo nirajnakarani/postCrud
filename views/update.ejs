@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form action="/upadateStdetails" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="editID" value="<%=oldSt.id%>">
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>Enter Name : <input type="text" name="name" value="<%=oldSt.name%>"></td>
+            </tr>
+            <tr>
+                <td>Enter Age : <input type="text" name="age" value="<%=oldSt.age%>"></td>
+            </tr>
+            <tr>
+                <td>
+                    Select Gender : <input type="radio" name="gender" value="male" <%if(oldSt.gender=="male" ){%>
+                    <%="checked"%>
+                        <%}%> > Male
+                            <input type="radio" name="gender" value="female" <%if(oldSt.gender=="female" ){%>
+                            <%="checked"%>
+                                <%}%>> Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Select Hobby : <input type="checkbox" name="hobby" value="reading"
+                        <%if(oldSt.hobby.includes("reading")){%>
+                    <%="checked"%>
+                        <%}%> >Reading
+                            <input type="checkbox" name="hobby" value="adventure"
+                                <%if(oldSt.hobby.includes("adventure")){%>
+                            <%="checked"%>
+                                <%}%>>Adventure
+                                    <input type="checkbox" name="hobby" value="foody"
+                                        <%if(oldSt.hobby.includes("foody")){%>
+                                    <%="checked"%>
+                                        <%}%> >Foody
+                </td>
+            </tr>
+            <%var city=["surat","ahemadabad","bharuch","rajkot"]%>
+                <tr>
+                    <td>
+                        <select name="city">
+                            <option value="">-- - --</option>
+                            <%city.map((v)=>{%>
+                                <option value="<%=v%>" <%if(v==oldSt.city){%>
+                                    <%="selected"%>
+                                        <%}%>>
+                                            <%=v%>
+                                </option>
+
+                                <% })%>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Enter Msg : <textarea name="msg"><%=oldSt.msg%></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>upload img <input type="file" name="adminImg">
+                    <img src="<%=oldSt.adminImg%>" alt="" height="100px"></td>
+
+                </tr>
+
+                <tr>
+                    <td style="display: flex; justify-content: space-between;"> <input type="submit" value="Edit">
+                        <a href="/viewSt">View</a>
+                    </td>
+                </tr>
+        </table>
+    </form>
+
+
+</body>
+
+</html>

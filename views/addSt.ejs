@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="/insertSt" method="post" enctype="multipart/form-data">
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>Enter Name : <input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>Enter Age : <input type="text" name="age"></td>
+            </tr>
+            <tr>
+                <td>
+                    Select Gender : <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Select Hobby : <input type="checkbox" name="hobby" value="reading">Reading
+                    <input type="checkbox" name="hobby" value="adventure">Adventure
+                    <input type="checkbox" name="hobby" value="foody">Foody
+                </td>
+            </tr>
+            <%var city=["surat","ahemadabad","bharuch","rajkot"]%>
+                <tr>
+                    <td>
+                        <select name="city">
+                            <option value="">-- - --</option>
+                            <%city.map((v)=>{%>
+                                <option value="<%=v%>">
+                                    <%=v%>
+                                </option>
+
+                                <% })%>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Enter Msg : <textarea name="msg"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>upload img <input type="file" name="adminImg"></td>
+                </tr>
+                <tr>
+                    <td style="display: flex; justify-content: space-between;"> <input type="submit" value="submit">
+                        <a href="/viewSt">View</a>
+                    </td>
+                </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
